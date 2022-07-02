@@ -1,0 +1,14 @@
+#!/bin/bash -x
+
+read -p "enter the Date  " date
+read -p "enter the month " month
+if [ $20 -le $date ] || [ $date -le $31 ] && [ $month == 3 ] || [ $month == 5 ]
+	then
+	echo "TRUE"
+elif [ $20 -le $date ] || [ $date -le $30 ] && [ $month == 4 ] || [ $month == 6 ]
+       	then
+       	echo "TRUE"
+else
+	echo "FALSE"
+fi
+

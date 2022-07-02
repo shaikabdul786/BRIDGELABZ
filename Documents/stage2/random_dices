@@ -1,0 +1,5 @@
+dice1=$((RANDOM%6+1))
+dice2=$((RANDOM%6+1))
+echo "Random of Dice1 is $dice1"
+echo "Random of Dice2 is $dice2"
+echo "sum of two dice is $(($dice1+$dice2))"

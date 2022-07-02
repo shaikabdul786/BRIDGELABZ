@@ -1,0 +1,210 @@
+
+
+solution:1
+ 
+for files in *.txt
+do 
+folderName=$(echo $files|awk -F. '{print $1}';) ;
+mkdir "${folderName%.*}"; done
+
+
+or
+
+for files in *.txt
+do 
+folderName="$(echo $files|awk -F. '{print $1}';)" ;
+echo fol
+mkdir $echo folderName;
+done
+
+or
+
+simple 
+
+$ for files in *.txt; do  folder="$(echo $files|awk -F. '{print $1}';)" ; mkdir $folder; done
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+How do make an executable file in Linux?
+
+Answer: 1)in executable file
+		Add #!/bin/bash -x
+	2)in git bash
+		chmod +x file.exection
+
+
+How do I open an executable file in Linux?
+answer:      ./forloop.sh
+
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+How to see only directories
+Answer:
+	ls -d */
+
+or
+
+echo */
+
+
+
+how to get only extension text
+
+$ for i in *.java
+> do
+> e="${i##*.}"
+> echo $e
+> done
+java
+
+
+exercise program
+
+for files in *.java *.py *.js ;
+do
+folder="$(echo $files | awk -F. '{ print $1}')";
+	if [ -d $folder ]
+	then
+		rm -R $folder
+	fi
+	extension="${files##*.}";
+	mkdir  $folder $extension ;
+	mv $files $extension ;
+	mv $extension $folder;
+done
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+How do I print a random number 10 to 99 in shell script?
+
+
+Answer:
+
+	echo $(($(($RANDOM%$((max-min+1))))+min))
+
+
+Here max = 99 min 10
+	echo $(($(($RANDOM%$((99-10+1))))+10))
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#!/bin/bash -x
+
+read -p "enter the Date  " date
+read -p "enter the month " month
+
+
+if [ $20 -le $date ] || [ $date -le $31 ]
+        then
+                if [ $month == 3 ] || [ $month == 5 ]
+                then
+                echo "TRUE"
+                fi
+elif [ $20 -le $date ] || [ $date -le $30 ]
+        then
+                if [ $month == 4 ] || [ $month == 6 ]
+                then
+                echo "TRUE"
+                fi
+else
+        echo "FALSE"
+fi
+
+
+
+
+
+
+
+
+
+
+
+
+a=12.5
+b=3.5
+echo ((a/b))
+
+
+
+
+WJ@3CbQwxhJp
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

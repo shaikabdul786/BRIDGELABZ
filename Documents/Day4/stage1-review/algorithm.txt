@@ -1,0 +1,56 @@
+
+#!/bin/bash -x		------------------------------------------->	For execution
+
+touch x.java y.py z.js  ------------------------------------------->	For creating a files ( x.java , y.py , z.js )
+
+for files in *.java *.py *.js ;		--------------------------->	For loop
+do
+        folder="$(echo $files | awk -F. '{ print $1}')";	--->	Extracting folder name from file name 
+        if [ -d $folder ]		--------------------------->	checking the folder name if avaliable with same name
+        then				--------------------------->	if avaliable same name
+                rm -R $folder		--------------------------->	then to remove the folder
+        fi				--------------------------->	Else (continue)
+        extension="${files##*.}";	--------------------------->	extracting extension (text) from file name
+        mkdir  $folder $extension ;	--------------------------->	Creating the Directory with file name
+        mv $files $extension ;		--------------------------->	Moving the files to extension name folder
+        mv $extension $folder;		--------------------------->	Moving the Extension directory to file name directory
+done
+
+
+
+
+
+
+
+$ ./day4.sh
++ touch x.java y.py z.js
++ for files in *.java *.py *.js
+++ echo x.java
+++ awk -F. '{ print $1}'
++ folder=x
++ '[' -d x ']'
++ rm -R x
++ extension=java
++ mkdir x java
++ mv x.java java
++ mv java x
++ for files in *.java *.py *.js
+++ echo y.py
+++ awk -F. '{ print $1}'
++ folder=y
++ '[' -d y ']'
++ rm -R y
++ extension=py
++ mkdir y py
++ mv y.py py
++ mv py y
++ for files in *.java *.py *.js
+++ echo z.js
+++ awk -F. '{ print $1}'
++ folder=z
++ '[' -d z ']'
++ rm -R z
++ extension=js
++ mkdir z js
++ mv z.js js
++ mv js z
